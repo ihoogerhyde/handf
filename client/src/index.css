@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom hunting/outdoor theme colors */
+  --forest: hsl(84, 63%, 14%);
+  --hunter: hsl(16, 100%, 59%);
+  --saddle: hsl(25, 76%, 31%);
+  --beige: hsl(60, 29%, 94%);
+  --charcoal: hsl(0, 0%, 24%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  
+  /* Dark theme custom colors */
+  --forest: hsl(84, 63%, 14%);
+  --hunter: hsl(16, 100%, 59%);
+  --saddle: hsl(25, 76%, 31%);
+  --beige: hsl(60, 29%, 94%);
+  --charcoal: hsl(0, 0%, 90%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-forest {
+    color: var(--forest);
+  }
+  
+  .text-hunter {
+    color: var(--hunter);
+  }
+  
+  .text-saddle {
+    color: var(--saddle);
+  }
+  
+  .text-beige {
+    color: var(--beige);
+  }
+  
+  .text-charcoal {
+    color: var(--charcoal);
+  }
+  
+  .bg-forest {
+    background-color: var(--forest);
+  }
+  
+  .bg-hunter {
+    background-color: var(--hunter);
+  }
+  
+  .bg-saddle {
+    background-color: var(--saddle);
+  }
+  
+  .bg-beige {
+    background-color: var(--beige);
+  }
+  
+  .bg-charcoal {
+    background-color: var(--charcoal);
+  }
+  
+  .border-forest {
+    border-color: var(--forest);
+  }
+  
+  .border-hunter {
+    border-color: var(--hunter);
+  }
+  
+  .border-saddle {
+    border-color: var(--saddle);
+  }
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  font-family: inherit;
+  z-index: 10;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.leaflet-popup-content {
+  margin: 8px 12px;
+  line-height: 1.4;
+}
+
+.leaflet-popup {
+  z-index: 1000;
+}
+
+.leaflet-popup-pane {
+  z-index: 1000;
+}
+
+.leaflet-marker-pane {
+  z-index: 600;
+}
+
+.leaflet-shadow-pane {
+  z-index: 500;
+}
+
+.leaflet-overlay-pane {
+  z-index: 400;
+}
+
+.leaflet-map-pane {
+  z-index: 100;
+}
+
+.leaflet-tile-pane {
+  z-index: 50;
+}
+
+.custom-div-icon {
+  background: transparent;
+  border: none;
+}
+
+.custom-wildlife-icon {
+  background: transparent;
+  border: none;
+}
+
+.custom-fishing-icon {
+  background: transparent;
+  border: none;
+}
+
+.custom-waypoint-icon {
+  background: transparent;
+  border: none;
+}
+
+/* Loading states */
+.loading-skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .leaflet-control-zoom {
+    display: none;
+  }
+  
+  .leaflet-control-attribution {
+    font-size: 10px;
+  }
+}
